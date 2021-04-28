@@ -12,7 +12,7 @@ class GildedRoseTest {
     void foo() {
         Item[] items = new Item[] { new Item("foo", 0, 0) };
         GildedRose app = new GildedRose(items);
-        app.updateQuality();
+        app.updateItems();
         assertEquals("foo", app.items[0].name);
     }
 
@@ -20,7 +20,7 @@ class GildedRoseTest {
     void agedBrieSellnDecreasesBy1(){
         Item[] items = new Item[] { new Item("Aged Brie", 0, 0) };
         GildedRose app = new GildedRose(items);
-        app.updateQuality();
+        app.updateItems();
         assertEquals("Aged Brie", app.items[0].name);
         assertEquals(-1, app.items[0].sellIn);
     }
@@ -66,7 +66,7 @@ class GildedRoseTest {
     public GildedRose checkMyObject(String name, Integer sellin, Integer quality) {
         Item[]  items = new  Item[] { new Item(name, sellin, quality) };
         GildedRose app = new GildedRose(items);
-        app.updateQuality();
+        app.updateItems();
         return app;
     }
 
