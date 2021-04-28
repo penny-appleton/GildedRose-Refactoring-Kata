@@ -9,6 +9,11 @@ class GildedRose {
 
     public void updateItems() {
         for (int i = 0; i < items.length; i++) {
+            Item item = items[i];
+            Poo poo = new ItemFactory(items[i]).getItem();
+            if (!item.name.equals("Sulfuras, Hand of Ragnaros") && !item.name.equals("Backstage passes to a TAFKAL80ETC concert") && !item.name.equals("Aged Brie")) {
+                poo.update(items[i]);
+            }
             updateIndividualItem(items[i]);
         }
     }
@@ -23,19 +28,9 @@ class GildedRose {
         } else if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             handleBackstagePass(item);
             return;
-        } else {
-            handleUnknownItem(item);
         }
     }
 
-    private void handleUnknownItem(Item item) {
-        decrementQuality(item);
-        decrementSellin(item);
-        if (item.sellIn < 0) {
-            decrementQuality(item);
-        }
-
-    }
 
     private void handleAgedBrie(Item item) {
         incrementQuality(item);
