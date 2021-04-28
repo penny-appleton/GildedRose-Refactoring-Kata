@@ -58,11 +58,6 @@ class GildedRose {
         item.sellIn = item.sellIn - 1;
     }
 
-    private void decrementQuality(Item item) {
-        if (item.quality > 0) {
-            item.quality = item.quality - 1;
-        }
-    }
 
     private void incrementQuality(Item item) {
         if (item.quality < 50) {
