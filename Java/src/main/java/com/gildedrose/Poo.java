@@ -12,4 +12,10 @@ public abstract class Poo {
             item.quality = item.quality - 1;
         }
     }
+
+    protected void incrementQuality(Item item) {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1;
+        }
+    }
 }
