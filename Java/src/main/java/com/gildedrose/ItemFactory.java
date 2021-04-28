@@ -4,6 +4,7 @@ public class ItemFactory {
     private OtherItem otherItem = new OtherItem();
     private Item item;
     private AgedBrie agedBrie;
+    private BackstagePass backstagePass;
 
     public ItemFactory(Item item) {
         this.item = item;
@@ -13,8 +14,13 @@ public class ItemFactory {
         if (item.name.equals("Aged Brie")){
            return agedBrie = new AgedBrie();
         }
+
+        if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")){
+            backstagePass = new BackstagePass();
+        }
         return otherItem;
     }
 
 
 }
+
