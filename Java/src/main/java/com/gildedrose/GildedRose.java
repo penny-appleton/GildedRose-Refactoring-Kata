@@ -59,4 +59,14 @@ class GildedRose {
             }
         }
     }
+
+    //for testing
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Item item: items) {
+            sb.append("[" + item.toString() + "]");
+        }
+        return sb.toString();
+    }
 }
