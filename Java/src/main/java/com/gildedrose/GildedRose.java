@@ -8,23 +8,13 @@ class GildedRose {
     }
 
     public void updateItems() {
-        for (int i = 0; i < items.length; i++) {
-            Item item = items[i];
-            Poo poo = new ItemFactory(items[i]).getItem();
-            if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                poo.update(items[i]);
-            }
-            updateIndividualItem(items[i]);
+        for (Item item : items) {
+            new ItemFactory(item).getItem().update(item);
+
         }
     }
 
-    private void updateIndividualItem(Item item) {
-        if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            return;
-        }
-
-    }
-
+    //for testing
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

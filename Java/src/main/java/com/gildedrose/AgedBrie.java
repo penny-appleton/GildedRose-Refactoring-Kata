@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class AgedBrie extends Poo{
+public class AgedBrie extends ItemStrategy {
 
 
     @Override

@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public abstract class Poo {
+public abstract class ItemStrategy {
     public abstract void update(Item item);
 
     protected void decrementSellin(Item item) {

@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class BackstagePass extends Poo {
+public class BackstagePass extends ItemStrategy {
     @Override
     public void update(Item item) {
         incrementQuality(item);
