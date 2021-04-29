@@ -32,6 +32,38 @@ class GildedRoseTest {
         CombinationApprovals.verifyAllCombinations(this::checkMyObject, name, sellin, quality);
     }
 
+    @Test
+    public void testBackstagePasses() throws Exception {
+        String[] name = { "Backstage passes to a TAFKAL80ETC concert" };
+        Integer[] sellin = Range.get(-1, 12);
+        Integer[] quality = Range.get(-1, 51);
+        CombinationApprovals.verifyAllCombinations(this::checkMyObject, name, sellin, quality);
+    }
+
+    @Test
+    public void testAgedBrie() throws Exception {
+        String[] name = { "Aged Brie" };
+        Integer[] sellin = Range.get(-1, 12);
+        Integer[] quality = Range.get(-1, 51);
+        CombinationApprovals.verifyAllCombinations(this::checkMyObject, name, sellin, quality);
+    }
+
+    @Test
+    public void testSulfuras() throws Exception {
+        String[] name = { "Sulfuras, Hand of Ragnaros" };
+        Integer[] sellin = Range.get(-1, 12);
+        Integer[] quality = Range.get(-1, 51);
+        CombinationApprovals.verifyAllCombinations(this::checkMyObject, name, sellin, quality);
+    }
+
+    @Test
+    public void testOther() throws Exception {
+        String[] name = { "Other" };
+        Integer[] sellin = Range.get(-1, 12);
+        Integer[] quality = Range.get(-1, 51);
+        CombinationApprovals.verifyAllCombinations(this::checkMyObject, name, sellin, quality);
+    }
+
     //helper methods
     public GildedRose checkMyObject(String name, Integer sellin, Integer quality) {
         Item[]  items = new  Item[] { new Item(name, sellin, quality) };
