@@ -27,7 +27,9 @@ class GildedRose {
         }
 
         if (items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-        } else {
+        } else if(items[i].name.equals("Aged Brie")){
+        }
+        else {
             items[i].sellIn = items[i].sellIn - 1;
         }
 
@@ -52,6 +54,8 @@ class GildedRose {
         if (items[i].quality < 50) {
             items[i].quality = items[i].quality + 1;
         }
+
+        items[i].sellIn = items[i].sellIn - 1;
     }
 
     private void handleBackstagePasses(int i) {
