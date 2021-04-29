@@ -18,15 +18,22 @@ class GildedRose {
         if (items[i].name.equals("Aged Brie")) {
             handleAgedBrie(i);
             return;
-        } else if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+        }
+        if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             handleBackstagePasses(i);
             return;
         } else {
-            if (items[i].quality > 0) {
-                items[i].quality = items[i].quality - 1;
-            }
+            handleOtherItem(i);
         }
 
+
+    }
+
+    private void handleOtherItem(int i) {
+        if (items[i].quality > 0) {
+            items[i].quality = items[i].quality - 1;
+
+        }
         items[i].sellIn = items[i].sellIn - 1;
 
         if (items[i].sellIn < 0) {
