@@ -45,29 +45,33 @@ class GildedRose {
 
     private void handleAgedBrie(int i) {
         if (items[i].quality < 50) {
-            items[i].quality = items[i].quality + 1;
+            incrementQuality(i);
         }
         items[i].sellIn = items[i].sellIn - 1;
         if (items[i].sellIn < 0) {
             if (items[i].quality < 50) {
-                items[i].quality = items[i].quality + 1;
+                incrementQuality(i);
             }
         }
     }
 
+    private void incrementQuality(int i) {
+        items[i].quality = items[i].quality + 1;
+    }
+
     private void handleBackstagePasses(int i) {
         if (items[i].quality < 50) {
-            items[i].quality = items[i].quality + 1;
+            incrementQuality(i);
         }
         if (items[i].sellIn < 11) {
             if (items[i].quality < 50) {
-                items[i].quality = items[i].quality + 1;
+                incrementQuality(i);
             }
         }
 
         if (items[i].sellIn < 6) {
             if (items[i].quality < 50) {
-                items[i].quality = items[i].quality + 1;
+                incrementQuality(i);
             }
         }
 
