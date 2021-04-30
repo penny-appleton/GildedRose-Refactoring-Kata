@@ -8,7 +8,10 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (int i = 0; i < items.length; i++) updateItemQuality(i);
+        for (int i = 0; i < items.length; i++) {
+            
+            updateItemQuality(i);
+        }
     }
 
     private void updateItemQuality(int i) {
@@ -25,24 +28,19 @@ class GildedRose {
         } else {
             handleOtherItem(i);
         }
-
-
     }
 
     private void handleOtherItem(int i) {
         if (items[i].quality > 0) {
             decrementQuality(i);
-
         }
         decrementSellin(i);
-
         if (items[i].sellIn < 0) {
             if (items[i].quality > 0) {
                 decrementQuality(i);
             }
         }
     }
-
 
     private void handleAgedBrie(int i) {
         if (items[i].quality < 50) {
@@ -56,7 +54,6 @@ class GildedRose {
         }
     }
 
-
     private void handleBackstagePasses(int i) {
         if (items[i].quality < 50) {
             incrementQuality(i);
@@ -66,19 +63,15 @@ class GildedRose {
                 incrementQuality(i);
             }
         }
-
         if (items[i].sellIn < 6) {
             if (items[i].quality < 50) {
                 incrementQuality(i);
             }
         }
-
         decrementSellin(i);
-
         if (items[i].sellIn < 0) {
             items[i].quality = items[i].quality - items[i].quality;
         }
-
     }
 
     private void decrementSellin(int i) {
