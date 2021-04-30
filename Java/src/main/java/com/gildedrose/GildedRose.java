@@ -31,23 +31,24 @@ class GildedRose {
 
     private void handleOtherItem(int i) {
         if (items[i].quality > 0) {
-            items[i].quality = items[i].quality - 1;
+            decrementQuality(i);
 
         }
-        items[i].sellIn = items[i].sellIn - 1;
+        decrementSellin(i);
 
         if (items[i].sellIn < 0) {
             if (items[i].quality > 0) {
-                items[i].quality = items[i].quality - 1;
+                decrementQuality(i);
             }
         }
     }
+
 
     private void handleAgedBrie(int i) {
         if (items[i].quality < 50) {
             incrementQuality(i);
         }
-        items[i].sellIn = items[i].sellIn - 1;
+        decrementSellin(i);
         if (items[i].sellIn < 0) {
             if (items[i].quality < 50) {
                 incrementQuality(i);
@@ -55,9 +56,6 @@ class GildedRose {
         }
     }
 
-    private void incrementQuality(int i) {
-        items[i].quality = items[i].quality + 1;
-    }
 
     private void handleBackstagePasses(int i) {
         if (items[i].quality < 50) {
@@ -75,12 +73,24 @@ class GildedRose {
             }
         }
 
-        items[i].sellIn = items[i].sellIn - 1;
+        decrementSellin(i);
 
         if (items[i].sellIn < 0) {
             items[i].quality = items[i].quality - items[i].quality;
         }
 
+    }
+
+    private void decrementSellin(int i) {
+        items[i].sellIn = items[i].sellIn - 1;
+    }
+
+    private void decrementQuality(int i) {
+        items[i].quality = items[i].quality - 1;
+    }
+
+    private void incrementQuality(int i) {
+        items[i].quality = items[i].quality + 1;
     }
 
     //for testing
