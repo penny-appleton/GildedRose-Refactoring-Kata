@@ -9,7 +9,11 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            
+            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros") && !items[i].name.equals("Aged Brie") && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                ItemStrategy strategy = new ItemFactory().getItem();
+                strategy.update(items[i]);
+                return;
+            }
             updateItemQuality(i);
         }
     }
@@ -25,20 +29,6 @@ class GildedRose {
         if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             handleBackstagePasses(i);
             return;
-        } else {
-            handleOtherItem(i);
-        }
-    }
-
-    private void handleOtherItem(int i) {
-        if (items[i].quality > 0) {
-            decrementQuality(i);
-        }
-        decrementSellin(i);
-        if (items[i].sellIn < 0) {
-            if (items[i].quality > 0) {
-                decrementQuality(i);
-            }
         }
     }
 
@@ -76,10 +66,6 @@ class GildedRose {
 
     private void decrementSellin(int i) {
         items[i].sellIn = items[i].sellIn - 1;
-    }
-
-    private void decrementQuality(int i) {
-        items[i].quality = items[i].quality - 1;
     }
 
     private void incrementQuality(int i) {
