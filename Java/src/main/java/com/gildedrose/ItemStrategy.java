@@ -11,4 +11,8 @@ public abstract class ItemStrategy {
     public void decrementSellin(Item item){
         item.sellIn = item.sellIn - 1;
     }
+
+    public void incrementQuality(Item item) {
+        item.quality = item.quality + 1;
+    }
 }
