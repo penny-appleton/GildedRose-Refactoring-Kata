@@ -7,10 +7,10 @@ class GildedRose {
         this.items = items;
     }
 
-    public void updateQuality() {
-        for (int i = 0; i < items.length; i++) {
-            ItemStrategy strategy = new ItemFactory().getItem(items[i]);
-            strategy.update(items[i]);
+    public void updateItem() {
+        for (Item item : items) {
+            ItemStrategy strategy = new ItemFactory().getItem(item);
+            strategy.update(item);
         }
     }
 
