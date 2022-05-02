@@ -44,7 +44,7 @@
       <HintPath>..\packages\ApprovalUtilities.5.7.3\lib\net461\ApprovalUtilities.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
@@ -57,7 +57,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Security.AccessControl">
-      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Win32.Registry">
       <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
