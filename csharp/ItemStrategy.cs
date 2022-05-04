@@ -11,7 +11,7 @@ namespace GildedRose
             }
         }
 
-        public void DecrementQuality(Item item)
+        public virtual void DecrementQuality(Item item)
         {
             if (item.Quality > 0)
             {

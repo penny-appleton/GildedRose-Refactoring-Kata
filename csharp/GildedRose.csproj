@@ -55,6 +55,7 @@
     <Compile Include="AgedBrie.cs" />
     <Compile Include="Sulfuras.cs" />
     <Compile Include="ItemStrategy.cs" />
+    <Compile Include="Conjured.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

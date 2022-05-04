@@ -110,5 +110,29 @@ namespace GildedRose
             app.UpdateQuality();
             Assert.AreEqual(0, Items[0].Quality);
         }
+
+        [Test]
+        public void ConjuredItemDegradesBy2WhenSellInIsGreaterThan0()
+        {
+            Items.Add(new Item { Name = "Conjured", SellIn = 5, Quality = 10 });
+            app.UpdateQuality();
+            Assert.AreEqual(8, Items[0].Quality);
+        }
+
+        [Test]
+        public void ConjuredItemDegradesBy4WhenSellInIsLessThan0()
+        {
+            Items.Add(new Item { Name = "Conjured", SellIn = -1, Quality = 10 });
+            app.UpdateQuality();
+            Assert.AreEqual(6, Items[0].Quality);
+        }
+
+        [Test]
+        public void ConjuredItemDegradesBy4WhenSellInIsEqualTo0()
+        {
+            Items.Add(new Item { Name = "Conjured", SellIn = 0, Quality = 10 });
+            app.UpdateQuality();
+            Assert.AreEqual(6, Items[0].Quality);
+        }
     }  
 }
